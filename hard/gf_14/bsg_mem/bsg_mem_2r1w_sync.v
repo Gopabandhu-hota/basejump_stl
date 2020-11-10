@@ -62,8 +62,11 @@ module bsg_mem_2r1w_sync #( parameter width_p = -1
 
   wire unused = reset_i;
 
+  // TODO: Add filename to flow
+  `ifdef BSG_EXTERNAL_2R1W_SYNC_MACROS
+   `BSG_EXTERNAL_2R1W_SYNC_MACROS
+  `endif
   // TODO: Define more hardened macro configs here
-  `bsg_mem_2r1w_sync_macro(32,64,1) else
   //`bsg_mem_2r1w_sync_macro(32,32,2) else
 
   // no hardened version found
